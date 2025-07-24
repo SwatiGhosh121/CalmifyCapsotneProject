@@ -97,7 +97,7 @@ const JournalEntry = () => {
             }}
           />
         </div>
-        <Button type="submit" variant="secondary" style={{ width: '100%' }}>
+        <Button type="submit" variant="secondary" className="btn btn-primary" style={{ width: '100%' }}>
           Save Entry
         </Button>
       </form>

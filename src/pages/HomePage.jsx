@@ -44,18 +44,12 @@ const HomePage = () => {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/features">
-              <Button variant="accent" style={{ fontSize: '1.1rem', padding: '16px 32px' }}>
+              <Button variant="primary">
                 Explore Tools
               </Button>
             </Link>
             <Link to="/resources">
-              <Button style={{ 
-                backgroundColor: 'rgba(255, 255, 255, 0.2)', 
-                color: 'var(--color-white)',
-                fontSize: '1.1rem', 
-                padding: '16px 32px',
-                backdropFilter: 'blur(10px)'
-              }}>
+              <Button variant="secondary">
                 Find Resources
               </Button>
             </Link>
@@ -114,13 +108,17 @@ const HomePage = () => {
         </section>
 
         {/* Featured Tools Section */}
-        <section style={{ padding: '4rem 0', backgroundColor: 'var(--color-light-gray)', margin: '0 -2rem', padding: '4rem 2rem' }}>
+        <section style={{ backgroundColor: 'var(--color-light-gray)', margin: '0 -2rem', padding: '4rem 2rem' }}>
           <h2 style={{ textAlign: 'center', marginBottom: '3rem' }}>Start Your Journey Today</h2>
           
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))', gap: '2rem', maxWidth: '1400px', margin: '0 auto' }}>
-            <MoodTracker />
-            <JournalEntry />
-            <div style={{ gridColumn: 'span 1' }}>
+            <div id="mood-tracker">
+              <MoodTracker />
+            </div>
+            <div id="private-journal">
+              <JournalEntry />
+            </div>
+            <div id="progress-insights" style={{ gridColumn: 'span 1' }}>
               <ProgressChart />
             </div>
           </div>
@@ -181,22 +179,12 @@ const HomePage = () => {
           </p>
           <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/features">
-              <Button style={{ 
-                backgroundColor: 'var(--color-white)', 
-                color: 'var(--color-primary)',
-                fontSize: '1.1rem',
-                padding: '16px 32px'
-              }}>
+              <Button variant="primary">
                 Start Tracking
               </Button>
             </Link>
             <Link to="/about">
-              <Button style={{ 
-                backgroundColor: 'rgba(255, 255, 255, 0.2)', 
-                color: 'var(--color-white)',
-                fontSize: '1.1rem',
-                padding: '16px 32px'
-              }}>
+              <Button variant="secondary">
                 Learn More
               </Button>
             </Link>

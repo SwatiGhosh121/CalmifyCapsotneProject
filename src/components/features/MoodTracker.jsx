@@ -52,18 +52,7 @@ const MoodTracker = () => {
               key={mood.value}
               type="button"
               onClick={() => setSelectedMood(mood.value)}
-              style={{
-                padding: '1rem',
-                border: selectedMood === mood.value ? '2px solid var(--color-primary)' : '2px solid #e5e7eb',
-                borderRadius: 'var(--border-radius)',
-                backgroundColor: selectedMood === mood.value ? 'rgba(174, 198, 207, 0.1)' : 'transparent',
-                cursor: 'pointer',
-                transition: 'var(--transition)',
-                display: 'flex',
-                flexDirection: 'column',
-                alignItems: 'center',
-                gap: '0.5rem',
-              }}
+              className={selectedMood === mood.value ? 'btn btn-primary' : 'btn btn-secondary'}
             >
               <span style={{ fontSize: '2rem' }}>{mood.emoji}</span>
               <span style={{ fontSize: '0.9rem', fontWeight: '500' }}>{mood.label}</span>
@@ -103,7 +92,7 @@ const MoodTracker = () => {
             }}
           />
         </div>
-        <Button type="submit" variant="primary" style={{ width: '100%' }}>
+        <Button type="submit" variant="primary" className="btn btn-primary" style={{ width: '100%' }}>
           Log My Mood
         </Button>
       </form>

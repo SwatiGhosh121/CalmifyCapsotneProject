@@ -3,7 +3,6 @@ export const teamMembers = [
     id: 1,
     name: "Dr. Sarah Chen",
     role: "Mental Health Advisor",
-    photo: "https://images.unsplash.com/photo-1494790108755-2616b612b786?w=400",
     bio: "Licensed therapist with 10+ years experience in digital wellness tools."
   },
   {

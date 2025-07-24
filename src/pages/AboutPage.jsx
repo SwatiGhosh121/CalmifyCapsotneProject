@@ -151,24 +151,40 @@ const AboutPage = () => {
             {teamMembers.map(member => (
               <SwiperSlide key={member.id}>
                 <Card style={{ alignItems: 'center', textAlign: 'center', height: 'auto' }}>
-                  <div style={{
-                    width: '120px',
-                    height: '120px',
-                    borderRadius: '50%',
-                    overflow: 'hidden',
-                    marginBottom: '1.5rem',
-                    border: '4px solid var(--color-primary)',
-                  }}>
-                    <img 
-                      src={member.photo} 
-                      alt={member.name} 
-                      style={{ 
-                        width: '100%', 
-                        height: '100%', 
-                        objectFit: 'cover'
-                      }} 
-                    />
-                  </div>
+                  {member.photo ? (
+                    <div style={{
+                      width: '120px',
+                      height: '120px',
+                      borderRadius: '50%',
+                      overflow: 'hidden',
+                      marginBottom: '1.5rem',
+                      border: '4px solid var(--color-primary)',
+                    }}>
+                      <img
+                        src={member.photo}
+                        alt={member.name}
+                        style={{
+                          width: '100%',
+                          height: '100%',
+                          objectFit: 'cover'
+                        }}
+                      />
+                    </div>
+                  ) : (
+                    <div style={{
+                      width: '120px',
+                      height: '120px',
+                      borderRadius: '50%',
+                      marginBottom: '1.5rem',
+                      border: '4px solid var(--color-primary)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      backgroundColor: 'var(--color-light-gray)'
+                    }}>
+                      <Users size={48} color="var(--color-primary)" />
+                    </div>
+                  )}
                   <h4 style={{ margin: '0 0 0.5rem', color: 'var(--color-text)' }}>{member.name}</h4>
                   <p style={{ fontSize: '0.9rem', color: 'var(--color-primary)', marginBottom: '1rem', fontWeight: '500' }}>
                     {member.role}

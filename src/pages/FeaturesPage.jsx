@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper/modules';
 import 'swiper/css';
@@ -10,6 +11,12 @@ import { appFeatures } from '../data/mockData';
 
 const FeaturesPage = () => {
   const [selectedFeature, setSelectedFeature] = useState(appFeatures[0]);
+
+  const featureIdMap = {
+    'Mood Tracker': 'mood-tracker',
+    'Private Journal': 'private-journal',
+    'Progress Insights': 'progress-insights',
+  };
 
   const getFeatureIcon = (title) => {
     switch (title) {
@@ -141,9 +148,14 @@ const FeaturesPage = () => {
                   </ul>
                 </div>
 
-                <Button variant="primary" style={{ fontSize: '1.1rem', padding: '12px 24px' }}>
-                  Try This Tool
-                </Button>
+                <Link to={`/#${featureIdMap[selectedFeature.title]}`} style={{ textDecoration: 'none' }}>
+                  <Button
+                    variant="primary"
+                    disabled={!featureIdMap[selectedFeature.title]}
+                  >
+                    Try This Tool
+                  </Button>
+                </Link>
               </div>
 
               <div>

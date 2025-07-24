@@ -120,42 +120,15 @@ const Navbar = () => {
 
       <div style={authButtonsContainer}>
         {isLoggedIn ? (
-          <button style={{
-            backgroundColor: 'var(--color-primary)',
-            color: 'var(--color-white)',
-            border: 'none',
-            padding: '8px 16px',
-            borderRadius: '8px',
-            fontWeight: '500',
-            cursor: 'pointer',
-            transition: 'var(--transition)',
-          }} onClick={logout}>
+          <button className="btn btn-primary" onClick={logout}>
             Logout
           </button>
         ) : (
           <>
-            <button style={{
-              background: 'none',
-              border: 'none',
-              fontWeight: '500',
-              color: 'var(--color-text)',
-              cursor: 'pointer',
-              padding: '8px 16px',
-              borderRadius: '8px',
-              transition: 'var(--transition)',
-            }} onClick={() => setShowModal(true)}>
+            <button className="btn btn-secondary" onClick={() => setShowModal(true)}>
               Login
             </button>
-            <button style={{
-              backgroundColor: 'var(--color-primary)',
-              color: 'var(--color-white)',
-              border: 'none',
-              padding: '8px 16px',
-              borderRadius: '8px',
-              fontWeight: '500',
-              cursor: 'pointer',
-              transition: 'var(--transition)',
-            }} onClick={() => setShowModal(true)}>
+            <button className="btn btn-primary" onClick={() => setShowModal(true)}>
               Sign Up
             </button>
           </>

@@ -55,30 +55,19 @@ const ResourcesPage = () => {
       <div className="container">
         {/* Category Filter */}
         <section style={{ padding: '2rem 0' }}>
-          <div style={{ 
-            display: 'flex', 
-            flexWrap: 'wrap', 
-            gap: '1rem', 
+          <div style={{
+            display: 'flex',
             justifyContent: 'center',
-            marginBottom: '2rem'
+            gap: '1rem',
+            flexWrap: 'wrap',
+            marginBottom: '2rem',
           }}>
             {categories.map(category => (
               <Button
                 key={category}
                 onClick={() => setSelectedCategory(category)}
                 variant={selectedCategory === category ? 'primary' : 'secondary'}
-                style={{
-                  padding: '8px 16px',
-                  fontSize: '0.9rem',
-                  backgroundColor: selectedCategory === category 
-                    ? 'var(--color-primary)' 
-                    : 'var(--color-light-gray)',
-                  color: selectedCategory === category 
-                    ? 'var(--color-white)' 
-                    : 'var(--color-text)',
-                }}
               >
-                <Tag size={16} />
                 {category}
               </Button>
             ))}
@@ -152,31 +141,13 @@ const ResourcesPage = () => {
                       {resource.description}
                     </p>
                     
-                    <a 
-                      href={resource.url} 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '8px',
-                        color: 'var(--color-primary)',
-                        fontWeight: '500',
-                        textDecoration: 'none',
-                        padding: '8px 0',
-                        borderTop: '1px solid #e5e7eb',
-                        transition: 'var(--transition)'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.color = 'var(--color-secondary)';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.color = 'var(--color-primary)';
-                      }}
-                    >
-                      Read Full Article
-                      <ExternalLink size={16} />
-                    </a>
+                    <div style={{ marginTop: 'auto', paddingTop: '1rem' }}>
+                      <a href={resource.url} target="_blank" rel="noopener noreferrer" style={{ textDecoration: 'none' }}>
+                        <Button variant="primary">
+                          Learn More
+                        </Button>
+                      </a>
+                    </div>
                   </Card>
                 ))}
               </div>
@@ -261,12 +232,7 @@ const ResourcesPage = () => {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <Button style={{
-                backgroundColor: 'var(--color-white)',
-                color: 'var(--color-primary)',
-                fontSize: '1rem',
-                padding: '12px 24px'
-              }}>
+              <Button variant="primary">
                 Crisis Support: Samaritans
               </Button>
             </a>
@@ -275,15 +241,25 @@ const ResourcesPage = () => {
               target="_blank" 
               rel="noopener noreferrer"
             >
-              <Button style={{
-                backgroundColor: 'rgba(255, 255, 255, 0.2)',
-                color: 'var(--color-white)',
-                fontSize: '1rem',
-                padding: '12px 24px'
-              }}>
+              <Button variant="secondary">
                 Find Local Help
               </Button>
             </a>
+          </div>
+        </section>
+
+        {/* Disclaimer */}
+        <section style={{ padding: '2rem 0', textAlign: 'center' }}>
+          <p style={{ color: '#6b7280' }}>
+            <strong>Disclaimer:</strong> This content is for informational purposes only and is not a substitute for professional medical advice.
+          </p>
+          <div style={{ display: 'flex', justifyContent: 'center', gap: '1rem', marginTop: '1rem' }}>
+            <Button variant="secondary">
+              I Understand
+            </Button>
+            <Button variant="primary">
+              Find a Professional
+            </Button>
           </div>
         </section>
       </div>
